@@ -1,12 +1,12 @@
 disabled = false
-languageCode = "en"
-languageName = "English"
+languageCode = "ja"
+languageName = "Japanese"
 weight = 1
 title = "Blowfish"
 
 [params]
-  displayName = "EN"
-  isoCode = "en"
+  displayName = "JA"
+  isoCode = "ja"
   rtl = false
   dateFormat = "2 January 2006"
   # logo = "img/logo.png"
@@ -14,13 +14,13 @@ title = "Blowfish"
   # description = "My awesome website"
   # copyright = "Copy, _right?_ :thinking_face:"
 
-# [params.author]
-#   name = "Your name here"
-#   email = "youremail@example.com"
-#   image = "img/blowfish_logo.png"
-#   imageQuality = 96
-#   headline = "I'm only human"
-#   bio = "A little bit about you"
+[params.author]
+  name = "Kei Takahashi"
+  email = "hiyasichuka.1260@gmail.com"
+  image = "img/blowfish_logo.png"
+  imageQuality = 96
+  headline = "I'm only human"
+  bio = "A little bit about you"
 #   links = [
 #     { email = "mailto:hello@your_domain.com" },
 #     { link = "https://link-to-some-website.com/" },
