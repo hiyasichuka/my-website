@@ -1,0 +1,425 @@
+/* ========================================
+   高橋慶 Portfolio - Custom Styling
+   ======================================== */
+
+:root {
+  /* Primary color: Vibrant Purple to Indigo gradient */
+  --primary-color: #667eea;
+  --primary-dark: #764ba2;
+  --accent-color: #f093fb;
+
+  /* Dark mode colors */
+  --bg-dark: #0f0f1e;
+  --bg-darker: #1a1a2e;
+  --text-light: #e8e8f0;
+  --border-color: #2d2d44;
+}
+
+/* ========================================
+   Global Styles
+   ======================================== */
+
+* {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 100%);
+  color: var(--text-light);
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  line-height: 1.8;
+}
+
+/* ========================================
+   Typography
+   ======================================== */
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  background: linear-gradient(135deg, #667eea, #f093fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 700;
+  border-left: 4px solid var(--primary-color);
+  padding-left: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  margin-top: 1.5rem;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #c8c8d8;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  border-bottom-color: var(--accent-color);
+  color: #fff;
+}
+
+/* ========================================
+   Navigation & Header
+   ======================================== */
+
+header {
+  background: rgba(26, 26, 46, 0.9);
+  border-bottom: 1px solid var(--border-color);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav a {
+  color: var(--text-light);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--accent-color);
+  border-bottom-color: var(--accent-color);
+}
+
+/* ========================================
+   Hero Section
+   ======================================== */
+
+.hero {
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 4rem;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: rgba(240, 147, 251, 0.2);
+  border-radius: 50%;
+  top: -100px;
+  right: -100px;
+  animation: float 6s ease-in-out infinite;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: rgba(102, 126, 234, 0.2);
+  border-radius: 50%;
+  bottom: -50px;
+  left: -50px;
+  animation: float 8s ease-in-out infinite reverse;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  color: white;
+  background: none;
+  -webkit-text-fill-color: unset;
+  margin-bottom: 1rem;
+  animation: fadeInDown 0.8s ease-out 0.2s both;
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.9);
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+/* ========================================
+   Cards & Sections
+   ======================================== */
+
+.card {
+  background: rgba(45, 45, 68, 0.8);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-color);
+  box-shadow: 0 8px 32px rgba(240, 147, 251, 0.15);
+}
+
+.project-card {
+  background: linear-gradient(
+    135deg,
+    rgba(102, 126, 234, 0.1),
+    rgba(240, 147, 251, 0.1)
+  );
+  border: 2px solid var(--border-color);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.project-card:hover {
+  border-color: var(--accent-color);
+}
+
+/* ========================================
+   Skill Tags & Lists
+   ======================================== */
+
+.skill-tag {
+  display: inline-block;
+  background: linear-gradient(
+    135deg,
+    rgba(102, 126, 234, 0.2),
+    rgba(240, 147, 251, 0.2)
+  );
+  border: 1px solid var(--primary-color);
+  color: var(--accent-color);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  margin: 0.5rem 0.5rem 0.5rem 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(102, 126, 234, 0.4),
+    rgba(240, 147, 251, 0.4)
+  );
+  transform: scale(1.05);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+table th {
+  background: rgba(102, 126, 234, 0.2);
+  color: var(--accent-color);
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+table td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  color: #c8c8d8;
+}
+
+table tr:hover {
+  background: rgba(102, 126, 234, 0.1);
+}
+
+/* ========================================
+   Animations
+   ======================================== */
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
+
+/* ========================================
+   Code Blocks
+   ======================================== */
+
+pre {
+  background: rgba(15, 15, 30, 0.9);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+code {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.95rem;
+  color: #a8ff60;
+  background: rgba(15, 15, 30, 0.5);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+}
+
+/* ========================================
+   Footer
+   ======================================== */
+
+footer {
+  background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 100%);
+  border-top: 1px solid var(--border-color);
+  padding: 2rem 0;
+  margin-top: 4rem;
+  text-align: center;
+  color: #888899;
+}
+
+footer a {
+  color: var(--accent-color);
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero {
+    min-height: 400px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+
+  table th,
+  table td {
+    padding: 0.6rem 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* ========================================
+   Light Mode Override
+   ======================================== */
+
+[data-appearance='light'] {
+  --bg-dark: #ffffff;
+  --bg-darker: #f5f5f7;
+  --text-light: #1a1a2e;
+  --border-color: #e8e8f0;
+}
+
+[data-appearance='light'] body {
+  background: linear-gradient(135deg, #ffffff 0%, #f5f5f7 100%);
+}
+
+[data-appearance='light'] p {
+  color: #555566;
+}
+
+[data-appearance='light'] .card {
+  background: rgba(245, 245, 247, 0.9);
+}
+
+[data-appearance='light'] table th {
+  background: rgba(102, 126, 234, 0.1);
+}
+
+[data-appearance='light'] table tr:hover {
+  background: rgba(102, 126, 234, 0.05);
+}
+
+[data-appearance='light'] footer {
+  background: linear-gradient(135deg, #ffffff 0%, #f5f5f7 100%);
+  color: #888899;
+}

@@ -1,0 +1,16 @@
+# -- Main Menu (Japanese) --
+
+[[main]]
+  name = "ホーム"
+  pageRef = "/"
+  weight = 10
+
+[[main]]
+  name = "プロジェクト"
+  pageRef = "projects"
+  weight = 20
+
+[[main]]
+  name = "スキル"
+  pageRef = "skills"
+  weight = 30

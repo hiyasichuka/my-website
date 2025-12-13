@@ -1,0 +1,28 @@
+# Hugo related
+public/
+resources/
+.hugo_build.lock
+
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Generated files
+*.o
+*.a
+*.so
+*.dylib
